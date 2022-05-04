@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams, useHistory } from 'react-router';
 import { useSelector } from 'react-redux';
-import { MDBBtn } from 'mdb-react-ui-kit';
+import { MDBBtn } from 'mdb-react-ui-kit';  
 
 const UserInfo = () => {
 

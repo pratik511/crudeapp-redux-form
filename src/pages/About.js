@@ -1,5 +1,5 @@
 import React from 'react'
-import { Formik, Form, Field, FieldArray} from "formik";
+import { Formik, Form, Field} from "formik";
 import * as yup from "yup";
 import ErrorMsg from '../component/ErrorMsg';
 
@@ -9,8 +9,8 @@ const validationSchema = yup.object({
     password: yup.string().required("Password is Required !"),
     gender: yup.string().required("Gender is Required !"),
     date: yup.date().required("Date is Required !"),
-    income: yup.number().required("Income is Required !"),
-    about: yup.string().required("About is Required !"),
+    income: yup.number().min(10,"Not a Valid Number").required("Income is Required !"),
+    address: yup.string().required("Address is Required !"),
 })
 
 const About = () => {
@@ -26,7 +26,7 @@ const About = () => {
                     gender: "",
                     date: "",
                     income: "",
-                    about: "",
+                    address: "",
                     social: [],
                     hobbies: [],
                 }}
@@ -67,9 +67,9 @@ const About = () => {
                         </Field>
                         <ErrorMsg name='income'/>
                         <br /> <br />
-                        <label>About:</label>
-                        <Field name="about" as="textarea" />
-                        <ErrorMsg name='about'/>
+                        <label>Address:</label>
+                        <Field name="address" as="textarea" />
+                        <ErrorMsg name='address'/>
                         <br /> <br />
                        
                         <button type="submit">Submit</button>
